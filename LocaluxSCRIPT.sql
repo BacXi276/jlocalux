@@ -82,7 +82,7 @@ CREATE TABLE Utilisateur(
    utAdr2 VARCHAR(50),
    utCdPost VARCHAR(50),
    utNumPost VARCHAR(50),
-   utAvatar IMG,
+   utAvatar VARCHAR(254),
    utNom VARCHAR(50),
    PRIMARY KEY(utPseudo)
 );
