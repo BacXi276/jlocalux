@@ -28,6 +28,7 @@ public class UtilisateurDAO implements UtilisateurDAOInterface {
             ps.setString(6, utilisateur.getUtPhrase());
             ps.setString(7, utilisateur.getUtAdr1());
             ps.setString(8, utilisateur.getUtAdr2());
+            
             ps.setString(9, utilisateur.utCommune.getCode_Postal());
             ps.setString(10, utilisateur.utCommune.getNum_Postal());
             ps.executeUpdate();
