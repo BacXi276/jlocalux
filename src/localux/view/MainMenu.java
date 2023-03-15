@@ -58,7 +58,7 @@ public class MainMenu extends javax.swing.JFrame {
         parametrer.setForeground(new java.awt.Color(204, 204, 204));
         parametrer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         parametrer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ressources/gear_80.png"))); // NOI18N
-        parametrer.setText("Paramétre");
+        parametrer.setText("Paramètres");
         parametrer.setToolTipText("Paramétrer l'application");
         parametrer.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         parametrer.setIconTextGap(0);
@@ -69,7 +69,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(parametrer);
-        parametrer.setBounds(80, 110, 100, 100);
+        parametrer.setBounds(140, 240, 100, 100);
 
         Clients.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         Clients.setForeground(new java.awt.Color(204, 204, 204));
@@ -86,7 +86,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Clients);
-        Clients.setBounds(240, 110, 100, 100);
+        Clients.setBounds(60, 110, 100, 100);
 
         mailler.setBackground(new java.awt.Color(255, 255, 255,100));
         mailler.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
@@ -108,7 +108,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(mailler);
-        mailler.setBounds(400, 110, 100, 100);
+        mailler.setBounds(310, 240, 100, 100);
 
         Vehicle.setBackground(new java.awt.Color(255, 255, 255,100));
         Vehicle.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
@@ -133,7 +133,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Vehicle);
-        Vehicle.setBounds(560, 110, 100, 100);
+        Vehicle.setBounds(220, 110, 100, 100);
 
         dashboard.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         dashboard.setForeground(new java.awt.Color(204, 204, 204));
@@ -150,13 +150,13 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(dashboard);
-        dashboard.setBounds(240, 240, 100, 100);
+        dashboard.setBounds(380, 110, 100, 100);
 
         imprime.setBackground(new java.awt.Color(255, 255, 255,100));
         imprime.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         imprime.setForeground(new java.awt.Color(204, 204, 204));
         imprime.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        imprime.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ressources/print_80.png"))); // NOI18N
+        imprime.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ressources/white-file-document.png"))); // NOI18N
         imprime.setText("Rapports");
         imprime.setToolTipText("Imprimer des données au format pdf");
         imprime.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -168,14 +168,14 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(imprime);
-        imprime.setBounds(400, 240, 100, 100);
+        imprime.setBounds(540, 110, 100, 100);
 
         quitte.setBackground(new java.awt.Color(255, 255, 255,100));
         quitte.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         quitte.setForeground(new java.awt.Color(204, 204, 204));
         quitte.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         quitte.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ressources/power-off_80.png"))); // NOI18N
-        quitte.setText("Quitter");
+        quitte.setText("Déconnexion");
         quitte.setToolTipText("Se déconnecter de l'application");
         quitte.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         quitte.setIconTextGap(0);
@@ -186,7 +186,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(quitte);
-        quitte.setBounds(560, 240, 100, 100);
+        quitte.setBounds(470, 240, 100, 100);
 
         info.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         info.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ressources/info-circle_20.png"))); // NOI18N
