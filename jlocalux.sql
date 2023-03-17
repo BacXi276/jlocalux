@@ -35953,7 +35953,20 @@ INSERT INTO `region` (`Code_Region`, `Nom_Region`) VALUES
 -- Structure de la table `utilisateur`
 --
 
-
+DROP TABLE IF EXISTS `utilisateur`;
+CREATE TABLE `utilisateur` (
+  `utPseudo` char(20) NOT NULL DEFAULT '' COMMENT 'Pseudo',
+  `utNom` varchar(48) DEFAULT NULL COMMENT 'Nom',
+  `utPrenom` varchar(48) DEFAULT NULL COMMENT 'Prénom',
+  `utMp` char(16) NOT NULL DEFAULT '' COMMENT 'Mot de passe en clair',
+  `utMail` char(50) NOT NULL DEFAULT '' COMMENT 'Nom\r\nMail',
+  `utPhrase` varchar(254) NOT NULL COMMENT 'Mot de passe crypté',
+  `utAdr1` varchar(64) DEFAULT NULL,
+  `utAdr2` varchar(64) DEFAULT NULL,
+  `utCdpost` char(5) DEFAULT NULL,
+  `utNumpost` char(2) DEFAULT NULL,
+  `utAvatar` mediumblob DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 
 --
 -- Déchargement des données de la table `utilisateur`
@@ -36053,7 +36066,8 @@ ALTER TABLE `region`
 --
 -- Index pour la table `utilisateur`
 --
-
+ALTER TABLE `utilisateur`
+  ADD PRIMARY KEY (`utPseudo`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
