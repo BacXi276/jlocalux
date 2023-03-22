@@ -54,7 +54,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(connecter);
-        connecter.setBounds(240, 250, 130, 30);
+        connecter.setBounds(240, 250, 130, 26);
 
         labelPseudo.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         labelPseudo.setForeground(new java.awt.Color(252, 220, 49));
@@ -77,7 +77,11 @@ public class Login extends javax.swing.JFrame {
         uiPass.setBackground(new java.awt.Color(255,255,255,120));
         uiPass.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
         uiPass.setForeground(new java.awt.Color(255, 255, 255));
-        uiPass.setText("jPasswordField1");
+        uiPass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                uiPassActionPerformed(evt);
+            }
+        });
         getContentPane().add(uiPass);
         uiPass.setBounds(200, 180, 240, 32);
 
@@ -105,6 +109,10 @@ public class Login extends javax.swing.JFrame {
             this.dispose();
         }
     }//GEN-LAST:event_connecterMouseClicked
+
+    private void uiPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uiPassActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_uiPassActionPerformed
 
     /**
      * @param args the command line arguments
