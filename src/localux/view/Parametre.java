@@ -99,6 +99,11 @@ public class Parametre extends javax.swing.JDialog {
         uiMailProtocol.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         uiMailProtocol.setText("smtp");
         uiMailProtocol.setName("uiMailProtocol"); // NOI18N
+        uiMailProtocol.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                uiMailProtocolActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(252, 220, 49));
@@ -319,7 +324,7 @@ public class Parametre extends javax.swing.JDialog {
             }
         });
         getContentPane().add(Abandonner);
-        Abandonner.setBounds(542, 390, 132, 30);
+        Abandonner.setBounds(542, 390, 123, 26);
 
         Valider.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         Valider.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ressources/valid_20.png"))); // NOI18N
@@ -332,7 +337,7 @@ public class Parametre extends javax.swing.JDialog {
             }
         });
         getContentPane().add(Valider);
-        Valider.setBounds(12, 390, 101, 30);
+        Valider.setBounds(12, 390, 94, 26);
 
         uiBackground.setBackground(new java.awt.Color(255,255,255,70));
         uiBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ressources/fec_dark.jpg"))); // NOI18N
@@ -366,6 +371,10 @@ public class Parametre extends javax.swing.JDialog {
         config.setSgbdPass(uiSgbdMP.getText().trim());
         ConfigDAO.saveXMLFile(config);
     }//GEN-LAST:event_ValiderMouseClicked
+
+    private void uiMailProtocolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uiMailProtocolActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_uiMailProtocolActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

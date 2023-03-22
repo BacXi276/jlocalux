@@ -296,7 +296,6 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Abandonner"/>
         <Property name="toolTipText" type="java.lang.String" value="Sortir de la fen&#xe9;tre d&apos;envoi"/>
-        <Property name="opaque" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="abandonMouseClicked"/>

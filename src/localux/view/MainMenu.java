@@ -254,7 +254,8 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_VehicleMouseClicked
 
     private void imprimeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imprimeMouseClicked
-        // TODO add your handling code here:
+        Rapport rapport = new Rapport();
+        rapport.setVisible(true);
     }//GEN-LAST:event_imprimeMouseClicked
 
     private void quitteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quitteMouseClicked
@@ -272,7 +273,8 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_ClientsMouseClicked
 
     private void dashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashboardMouseClicked
-        // TODO add your handling code here:
+        Location location = new Location();
+        location.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_dashboardMouseClicked
 
     private void VehicleAncestorMoved(java.awt.event.HierarchyEvent evt) {//GEN-FIRST:event_VehicleAncestorMoved
