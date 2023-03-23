@@ -87,25 +87,7 @@ CREATE TABLE Utilisateur(
    PRIMARY KEY(utPseudo)
 );
 
-CREATE TABLE Region(
-   code_region VARCHAR(50),
-   nom_region VARCHAR(50),
-   PRIMARY KEY(code_region, nom_region)
-);
 
-CREATE TABLE Departement(
-   dep_code VARCHAR(50),
-   dep_nom VARCHAR(50),
-   PRIMARY KEY(dep_code, dep_nom)
-);
-
-CREATE TABLE codes_postaux(
-   identifiant VARCHAR(50),
-   num_postal VARCHAR(50),
-   nom_commune VARCHAR(50),
-   code_postal VARCHAR(50),
-   PRIMARY KEY(identifiant)
-);
 
 CREATE TABLE Client(
    idClient VARCHAR(50),
@@ -217,21 +199,3 @@ CREATE TABLE proposer(
    FOREIGN KEY(idGarantie) REFERENCES Garantie(idGarantie)
 );
 
-CREATE TABLE Asso_19(
-   dep_code VARCHAR(50),
-   dep_nom VARCHAR(50),
-   identifiant VARCHAR(50),
-   PRIMARY KEY(dep_code, dep_nom, identifiant),
-   FOREIGN KEY(dep_code, dep_nom) REFERENCES Departement(dep_code, dep_nom),
-   FOREIGN KEY(identifiant) REFERENCES codes_postaux(identifiant)
-);
-
-CREATE TABLE Asso_20(
-   code_region VARCHAR(50),
-   nom_region VARCHAR(50),
-   dep_code VARCHAR(50),
-   dep_nom VARCHAR(50),
-   PRIMARY KEY(code_region, nom_region, dep_code, dep_nom),
-   FOREIGN KEY(code_region, nom_region) REFERENCES Region(code_region, nom_region),
-   FOREIGN KEY(dep_code, dep_nom) REFERENCES Departement(dep_code, dep_nom)
-);
