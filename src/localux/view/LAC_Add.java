@@ -54,7 +54,7 @@ public class LAC_Add extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Ajouter LAC");
+        jLabel1.setText("Ajout LAC");
 
         LAC_AddValid.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         LAC_AddValid.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ressources/valid_20.png"))); // NOI18N
@@ -104,7 +104,7 @@ public class LAC_Add extends javax.swing.JFrame {
                 .addComponent(LAC_AddAbandonner)
                 .addGap(43, 43, 43)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
                 .addComponent(LAC_AddValid)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()

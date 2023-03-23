@@ -60,7 +60,7 @@ public class LSC_Add extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Ajouter LSC");
+        jLabel1.setText("Ajout LSC");
 
         LSC_AddValid.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         LSC_AddValid.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ressources/valid_20.png"))); // NOI18N
