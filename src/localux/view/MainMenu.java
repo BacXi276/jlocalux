@@ -249,8 +249,8 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void VehicleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VehicleMouseClicked
         // TODO add your handling code here:
-        VehicleList vehicleLIST = new VehicleList (this.utConnect);
-        vehicleLIST.setVisible(true);
+        Vehicule vehicule = new Vehicule();
+        vehicule.setVisible(true);
     }//GEN-LAST:event_VehicleMouseClicked
 
     private void imprimeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imprimeMouseClicked

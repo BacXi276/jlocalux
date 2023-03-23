@@ -28,10 +28,10 @@ public class Location extends javax.swing.JFrame {
 
         scrollDataSys = new javax.swing.JScrollPane();
         tableVarSys = new javax.swing.JTable();
-        entete = new javax.swing.JPanel();
-        logoLCN = new javax.swing.JLabel();
+        addLSC = new javax.swing.JButton();
+        locAbandonner = new javax.swing.JButton();
+        addLAC = new javax.swing.JButton();
         titreGen = new javax.swing.JLabel();
-        adresse = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,77 +63,84 @@ public class Location extends javax.swing.JFrame {
         tableVarSys.getTableHeader().setReorderingAllowed(false);
         scrollDataSys.setViewportView(tableVarSys);
 
-        entete.setBackground(new java.awt.Color(255, 255, 255));
-        entete.setOpaque(false);
+        addLSC.setText("Ajouter LSC");
+        addLSC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addLSCMouseClicked(evt);
+            }
+        });
 
-        logoLCN.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        logoLCN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ressources/btslcn_x100.png"))); // NOI18N
+        locAbandonner.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        locAbandonner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ressources/escape_20.png"))); // NOI18N
+        locAbandonner.setText("Abandonner");
+        locAbandonner.setToolTipText("Sortir de la fenétre d'envoi");
+
+        addLAC.setText("Ajouter LAC");
+        addLAC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addLACMouseClicked(evt);
+            }
+        });
 
         titreGen.setBackground(new java.awt.Color(255, 255, 255));
         titreGen.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         titreGen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        titreGen.setText("Projet client lourd et ressources en Java");
+        titreGen.setText("LOCATION");
         titreGen.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
-        adresse.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        adresse.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        adresse.setText("<html><center>BTS SIO SLAM<br>\n\nLycée Claude Nougaro<br>\n\n82300 MONTEILS</center></html>"); // NOI18N
-
-        javax.swing.GroupLayout enteteLayout = new javax.swing.GroupLayout(entete);
-        entete.setLayout(enteteLayout);
-        enteteLayout.setHorizontalGroup(
-            enteteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, enteteLayout.createSequentialGroup()
-                .addGap(0, 104, Short.MAX_VALUE)
-                .addComponent(titreGen, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(115, Short.MAX_VALUE))
-            .addGroup(enteteLayout.createSequentialGroup()
-                .addGap(313, 313, 313)
-                .addComponent(logoLCN)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(enteteLayout.createSequentialGroup()
-                .addGap(255, 255, 255)
-                .addComponent(adresse, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        enteteLayout.setVerticalGroup(
-            enteteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(enteteLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(titreGen, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(logoLCN)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(adresse, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 730, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(locAbandonner)
+                        .addGap(18, 18, 18)
+                        .addComponent(titreGen, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(addLSC)
+                        .addGap(18, 18, 18)
+                        .addComponent(addLAC)))
+                .addContainerGap(140, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(entete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(scrollDataSys, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(scrollDataSys, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 561, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(locAbandonner)
+                    .addComponent(titreGen, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(133, 133, 133)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addLSC)
+                    .addComponent(addLAC))
+                .addContainerGap(346, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(entete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(12, 12, 12)
+                    .addGap(0, 241, Short.MAX_VALUE)
                     .addComponent(scrollDataSys, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void addLSCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addLSCMouseClicked
+        LSC_Add lsc_add = new LSC_Add();
+        lsc_add.setVisible(true);         // TODO add your handling code here:
+    }//GEN-LAST:event_addLSCMouseClicked
+
+    private void addLACMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addLACMouseClicked
+        LAC_Add lac_add = new LAC_Add();
+        lac_add.setVisible(true);  
+    }//GEN-LAST:event_addLACMouseClicked
 
     /**
      * @param args the command line arguments
@@ -171,9 +178,9 @@ public class Location extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel adresse;
-    private javax.swing.JPanel entete;
-    private javax.swing.JLabel logoLCN;
+    private javax.swing.JButton addLAC;
+    private javax.swing.JButton addLSC;
+    private javax.swing.JButton locAbandonner;
     private javax.swing.JScrollPane scrollDataSys;
     private javax.swing.JTable tableVarSys;
     private javax.swing.JLabel titreGen;

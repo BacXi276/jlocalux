@@ -29,9 +29,9 @@ public class Vehicule extends javax.swing.JFrame {
         scrollDataSys = new javax.swing.JScrollPane();
         tableVarSys = new javax.swing.JTable();
         entete = new javax.swing.JPanel();
-        logoLCN = new javax.swing.JLabel();
         titreGen = new javax.swing.JLabel();
-        adresse = new javax.swing.JLabel();
+        vehiAbandonner = new javax.swing.JButton();
+        addVehicule = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,52 +66,65 @@ public class Vehicule extends javax.swing.JFrame {
         entete.setBackground(new java.awt.Color(255, 255, 255));
         entete.setOpaque(false);
 
-        logoLCN.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        logoLCN.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ressources/btslcn_x100.png"))); // NOI18N
-
         titreGen.setBackground(new java.awt.Color(255, 255, 255));
         titreGen.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
         titreGen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        titreGen.setText("Projet client lourd et ressources en Java");
+        titreGen.setText("VEHICULE");
         titreGen.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        adresse.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        adresse.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        adresse.setText("<html><center>BTS SIO SLAM<br>\n\nLycée Claude Nougaro<br>\n\n82300 MONTEILS</center></html>"); // NOI18N
+        vehiAbandonner.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        vehiAbandonner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ressources/escape_20.png"))); // NOI18N
+        vehiAbandonner.setText("Abandonner");
+        vehiAbandonner.setToolTipText("Sortir de la fenétre d'envoi");
+        vehiAbandonner.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                vehiAbandonnerMouseClicked(evt);
+            }
+        });
+
+        addVehicule.setText("Ajouter");
+        addVehicule.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addVehiculeMouseClicked(evt);
+            }
+        });
+        addVehicule.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addVehiculeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout enteteLayout = new javax.swing.GroupLayout(entete);
         entete.setLayout(enteteLayout);
         enteteLayout.setHorizontalGroup(
             enteteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, enteteLayout.createSequentialGroup()
-                .addGap(0, 104, Short.MAX_VALUE)
-                .addComponent(titreGen, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(115, Short.MAX_VALUE))
             .addGroup(enteteLayout.createSequentialGroup()
-                .addGap(313, 313, 313)
-                .addComponent(logoLCN)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(enteteLayout.createSequentialGroup()
-                .addGap(255, 255, 255)
-                .addComponent(adresse, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 29, Short.MAX_VALUE)
+                .addGroup(enteteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(addVehicule)
+                    .addGroup(enteteLayout.createSequentialGroup()
+                        .addComponent(vehiAbandonner)
+                        .addGap(18, 18, 18)
+                        .addComponent(titreGen, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(212, Short.MAX_VALUE))
         );
         enteteLayout.setVerticalGroup(
             enteteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(enteteLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(titreGen, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(logoLCN)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(adresse, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(enteteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(titreGen, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(vehiAbandonner))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
+                .addComponent(addVehicule)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 730, Short.MAX_VALUE)
+            .addGap(0, 784, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -134,6 +147,19 @@ public class Vehicule extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void addVehiculeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addVehiculeMouseClicked
+        Vehicule_Add vehicule_add = new Vehicule_Add();
+        vehicule_add.setVisible(true);         // TODO add your handling code here:
+    }//GEN-LAST:event_addVehiculeMouseClicked
+
+    private void addVehiculeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addVehiculeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addVehiculeActionPerformed
+
+    private void vehiAbandonnerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vehiAbandonnerMouseClicked
+    this.dispose();
+    }//GEN-LAST:event_vehiAbandonnerMouseClicked
 
     /**
      * @param args the command line arguments
@@ -171,11 +197,11 @@ public class Vehicule extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel adresse;
+    private javax.swing.JButton addVehicule;
     private javax.swing.JPanel entete;
-    private javax.swing.JLabel logoLCN;
     private javax.swing.JScrollPane scrollDataSys;
     private javax.swing.JTable tableVarSys;
     private javax.swing.JLabel titreGen;
+    private javax.swing.JButton vehiAbandonner;
     // End of variables declaration//GEN-END:variables
 }
