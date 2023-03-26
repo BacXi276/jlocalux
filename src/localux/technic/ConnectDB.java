@@ -22,7 +22,7 @@ public class ConnectDB {
     public static Connection getConnect() throws Exception {
         char[] truc;
         Configuration c = ConfigDAO.getConfiguration();
-        String driver = "com.mysql.cj.jdbc.Driver"; // par defaut
+        String driver = "com.mysql.cj.jdbc.Driver";// par defaut
         /*c.setSgbdSys("mysql");
         c.setSgbdHost("mysql-localux.alwaysdata.net");
         c.setSgbdPort("3306");
@@ -30,7 +30,6 @@ public class ConnectDB {
         c.setSgbdUser("localux");
         c.setSgbdPass("BTSsio82300");*/
 
-        c.affiche();
         if(c.getSgbdSys().equals("mysql")) {
                 driver = "com.mysql.cj.jdbc.Driver";
         } else {
