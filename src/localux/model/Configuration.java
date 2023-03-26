@@ -6,6 +6,22 @@ public class Configuration {
 
     private String sgbdSys, sgbdHost, sgbdPort, sgbdDb, sgbdUser, sgbdPass;
     
+    public void affiche() {
+        System.out.println("mailProtocol: "+this.mailProtocol);
+        System.out.println("mailHost: "+this.mailHost);
+        System.out.println("mailPort: "+this.mailPort);
+        System.out.println("mailUser: "+this.mailUser);
+        System.out.println("mailPass: "+this.mailPass);
+        System.out.println("P2: SGBD");
+        System.out.println("sgbdSys: "+this.sgbdSys);
+        System.out.println("sgbdHost: "+this.sgbdHost);
+        System.out.println("sgbdPort: "+this.sgbdPort);
+        System.out.println("sgbdDb: "+this.sgbdDb);
+        System.out.println("sgbdUser: "+this.sgbdUser);
+        System.out.println("sgbdPass: "+this.sgbdPass);
+
+    }
+    
     public void setMailProtocol(String mailProtocol) {
         this.mailProtocol = mailProtocol;
     }
