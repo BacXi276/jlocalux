@@ -18,10 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `jlocalux`
+-- Base de données : `localux_db`
 --
 CREATE DATABASE IF NOT EXISTS `jlocalux` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `jlocalux`;
+USE `localux_db`;
 
 -- --------------------------------------------------------
 
