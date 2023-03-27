@@ -129,6 +129,9 @@
         <Property name="text" type="java.lang.String" value="Abandonner"/>
         <Property name="toolTipText" type="java.lang.String" value="Sortir de la fen&#xe9;tre d&apos;envoi"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="locAbandonnerMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="addLAC">
       <Properties>

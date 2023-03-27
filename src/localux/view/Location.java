@@ -74,6 +74,11 @@ public class Location extends javax.swing.JFrame {
         locAbandonner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ressources/escape_20.png"))); // NOI18N
         locAbandonner.setText("Abandonner");
         locAbandonner.setToolTipText("Sortir de la fenétre d'envoi");
+        locAbandonner.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                locAbandonnerMouseClicked(evt);
+            }
+        });
 
         addLAC.setText("Ajouter LAC");
         addLAC.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -141,6 +146,10 @@ public class Location extends javax.swing.JFrame {
         LAC_Add lac_add = new LAC_Add();
         lac_add.setVisible(true);  
     }//GEN-LAST:event_addLACMouseClicked
+
+    private void locAbandonnerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_locAbandonnerMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_locAbandonnerMouseClicked
 
     /**
      * @param args the command line arguments
