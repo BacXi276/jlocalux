@@ -20,7 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `localux_db`
 --
-CREATE DATABASE IF NOT EXISTS `jlocalux` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+CREATE DATABASE IF NOT EXISTS `localux_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `localux_db`;
 
 -- --------------------------------------------------------
