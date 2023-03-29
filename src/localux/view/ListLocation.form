@@ -89,10 +89,11 @@
         <Component class="javax.swing.JTable" name="tbUtilisateur">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="3" rowCount="0">
-                <Column editable="false" title="Nom" type="java.lang.Object"/>
-                <Column editable="false" title="Pr&#xe9;nom" type="java.lang.Object"/>
-                <Column editable="false" title="Utilisateur" type="java.lang.Object"/>
+              <Table columnCount="4" rowCount="0">
+                <Column editable="false" title="N&#xb0;Location" type="java.lang.Object"/>
+                <Column editable="false" title="Date Location" type="java.lang.Object"/>
+                <Column editable="false" title="Date Depart Pr&#xe9;vu" type="java.lang.Object"/>
+                <Column editable="true" title="Date Retour Pr&#xe9;vu" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -108,6 +109,11 @@
                   <Renderer/>
                 </Column>
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                   <Title/>
                   <Editor/>
                   <Renderer/>
@@ -149,58 +155,69 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jLabelNom" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jLabelPrenom" alignment="0" pref="113" max="32767" attributes="0"/>
+                                      <Component id="jLabelPseudo" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="jLabelMail" min="-2" pref="132" max="-2" attributes="0"/>
+                                  <Component id="jLabelMail2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelMail3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jLabelMail7" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelMail1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelMail4" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                          <Component id="uiDateRetourPrevu" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="uiDateDepartPrevu" min="-2" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                  <Component id="uiImmat" alignment="0" pref="250" max="32767" attributes="0"/>
+                                                  <Component id="uiLocation" alignment="1" max="32767" attributes="0"/>
+                                              </Group>
+                                              <Component id="uiCoutEstime" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="uiMontant" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="uiNbKmDepart" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="uiDateLocation" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="uiPhrase" pref="178" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                                  <Component id="uiFormule" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="Creer" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="Modifier" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="Supprimer" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="146" max="32767" attributes="0"/>
                           <Component id="Vider" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jLabelMail" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
-                                  <Component id="jLabelNom" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabelPrenom" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabelPseudo" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
-                                  <Component id="jLabelMP" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jLabelMail1" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelMP1" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="uiAdr1" min="-2" pref="167" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="214" max="-2" attributes="0"/>
-                                  <Component id="uiPhrase" pref="43" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="dateAchat" alignment="1" pref="250" max="32767" attributes="0"/>
-                                      <Component id="modele" alignment="1" pref="250" max="32767" attributes="0"/>
-                                      <Component id="uiTarif" alignment="1" pref="250" max="32767" attributes="0"/>
-                                      <Component id="immat" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="uiMP" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="51" pref="51" max="-2" attributes="0"/>
-                                          <Component id="Photo" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="avatar" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="uiCdpost" min="-2" pref="339" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="jLabelMail5" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="uiAssuranceComp" min="-2" pref="212" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -210,54 +227,64 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabelNom" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                              <Component id="immat" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="dateAchat" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                              <Component id="jLabelPrenom" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabelPseudo" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                              <Component id="modele" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabelMail" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                              <Component id="uiTarif" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="uiMP" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                              <Component id="jLabelMP" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="avatar" min="-2" pref="165" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="Photo" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="uiPhrase" min="-2" pref="24" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="uiAdr1" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="jLabelMail1" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabelNom" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="uiLocation" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="uiCdpost" alignment="3" min="-2" pref="105" max="-2" attributes="0"/>
-                      <Component id="jLabelMP1" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                      <Component id="jLabelPrenom" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                      <Component id="uiDateLocation" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="53" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabelPseudo" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                      <Component id="uiMontant" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabelMail" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                      <Component id="uiDateDepartPrevu" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
+                          <Component id="uiPhrase" min="-2" pref="24" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabelMail2" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                              <Component id="uiDateRetourPrevu" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="uiImmat" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                              <Component id="jLabelMail1" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabelMail3" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                              <Component id="uiNbKmDepart" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="uiCoutEstime" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelMail4" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="uiAssuranceComp" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                              <Component id="jLabelMail5" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabelMail7" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                              <Component id="uiFormule" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="98" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="Vider" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="Creer" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -278,10 +305,10 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="31" green="dc" red="fc" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Immatriculation"/>
+            <Property name="text" type="java.lang.String" value="N&#xb0;Location"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="immat">
+        <Component class="javax.swing.JTextField" name="uiLocation">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="new java.awt.Color(255,255,255,120)" type="code"/>
@@ -302,20 +329,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="31" green="dc" red="fc" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Date d&apos;achat"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="dateAchat">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="new java.awt.Color(255,255,255,120)" type="code"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="SansSerif" size="12" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
+            <Property name="text" type="java.lang.String" value="Date Location"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelPseudo">
@@ -326,20 +340,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="31" green="dc" red="fc" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Modele"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="modele">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="new java.awt.Color(255,255,255,120)" type="code"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="SansSerif" size="12" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
+            <Property name="text" type="java.lang.String" value="Montant R&#xe9;gl&#xe9;"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelMail">
@@ -350,44 +351,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="31" green="dc" red="fc" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Tarif"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="uiTarif">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="new java.awt.Color(255,255,255,120)" type="code"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="SansSerif" size="12" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelMP">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Verdana" size="12" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="31" green="dc" red="fc" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Nombre de places"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="uiMP">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="new java.awt.Color(255,255,255,120)" type="code"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="SansSerif" size="12" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
+            <Property name="text" type="java.lang.String" value="Date Depart Pr&#xe9;vu"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="uiPhrase">
@@ -411,24 +375,8 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="31" green="dc" red="fc" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Vitesse maximale"/>
+            <Property name="text" type="java.lang.String" value="Immatriculation"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="uiAdr1">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="new java.awt.Color(255,255,255,120)" type="code"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="SansSerif" size="12" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="uiAdr1ActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Vider">
           <Properties>
@@ -490,18 +438,7 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="SupprimerMouseClicked"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabelMP1">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Verdana" size="12" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="31" green="dc" red="fc" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Description"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="uiCdpost">
+        <Component class="javax.swing.JTextField" name="uiImmat">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="new java.awt.Color(255,255,255,120)" type="code"/>
@@ -514,27 +451,134 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="Photo">
+        <Component class="javax.swing.JLabel" name="jLabelMail2">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Dialog" size="12" style="1"/>
+              <Font name="Verdana" size="12" style="1"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/ressources/user-img_20.png"/>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="31" green="dc" red="fc" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Photo"/>
-            <Property name="toolTipText" type="java.lang.String" value="Modifier la photographie"/>
+            <Property name="text" type="java.lang.String" value="Date Retour Pr&#xe9;vu"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelMail3">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Verdana" size="12" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="31" green="dc" red="fc" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Nombre Km Depart"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelMail4">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Verdana" size="12" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="31" green="dc" red="fc" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Cout R&#xe9;pa Estim&#xe9;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelMail5">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Verdana" size="12" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="31" green="dc" red="fc" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Assurance Compl&#xe9;"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="uiAssuranceComp">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new java.awt.Color(255,255,255,120)" type="code"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="SansSerif" size="12" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="uiFormule">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new java.awt.Color(255,255,255,120)" type="code"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="SansSerif" size="12" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="PhotoMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="uiFormuleActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="avatar">
+        <Component class="javax.swing.JLabel" name="jLabelMail7">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/ressources/user-tie-min.jpg"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Verdana" size="12" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="31" green="dc" red="fc" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Formule"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JFormattedTextField" name="uiDateRetourPrevu">
+          <Properties>
+            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+              <Format subtype="1" type="1"/>
             </Property>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JFormattedTextField" name="uiDateDepartPrevu">
+          <Properties>
+            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+              <Format subtype="1" type="1"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JFormattedTextField" name="uiCoutEstime">
+          <Properties>
+            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+              <Format subtype="0" type="4"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JFormattedTextField" name="uiMontant">
+          <Properties>
+            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+              <Format subtype="0" type="4"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JFormattedTextField" name="uiNbKmDepart">
+          <Properties>
+            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+              <Format subtype="1" type="0"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JFormattedTextField" name="uiDateLocation">
+          <Properties>
+            <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor">
+              <Format subtype="1" type="1"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="uiDateLocationActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
