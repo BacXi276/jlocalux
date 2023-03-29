@@ -72,21 +72,6 @@ CREATE TABLE Gravite(
    PRIMARY KEY(idGravite)
 );
 
-CREATE TABLE Utilisateur(
-   utPseudo VARCHAR(50),
-   utPrenom VARCHAR(50),
-   utMp VARCHAR(50),
-   utMail VARCHAR(50),
-   utPhrase VARCHAR(50),
-   utAdr1 VARCHAR(50),
-   utAdr2 VARCHAR(50),
-   utCdPost VARCHAR(50),
-   utNumPost VARCHAR(50),
-   utAvatar VARCHAR(254),
-   utNom VARCHAR(50),
-   PRIMARY KEY(utPseudo)
-);
-
 
 
 CREATE TABLE Client(
