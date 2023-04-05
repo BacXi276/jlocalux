@@ -29,7 +29,7 @@ public class ListLocation extends javax.swing.JFrame {
     Connection con;
     Statement st;
     //LinkedList<Utilisateur> lesUtilisateurs = new LinkedList<>();
-    TreeMap<String, Utilisateur> lesUtilisateurs = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
+    TreeMap<String, LocationSansChauffeur> lesLSC = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
     UtilisateurDAO dao = new UtilisateurDAO();
     String uiNumpost;
     private Commune selectedVille;
@@ -38,15 +38,15 @@ public class ListLocation extends javax.swing.JFrame {
     public ListLocation(Utilisateur utilisateur) {
         this.utConnect = utilisateur;
         initComponents();
-        tbUtilisateur.setDefaultRenderer(Object.class, new localux.technic.CTableRendu());
+        tbLocationSansChauffeur.setDefaultRenderer(Object.class, new localux.technic.CTableRendu());
         tbScrollPane.getViewport().setOpaque(false);
         
-        JTableHeader tableHead = tbUtilisateur.getTableHeader();
+        JTableHeader tableHead = tbLocationSansChauffeur.getTableHeader();
         Font f = tableHead.getFont();
         tableHead.setFont(f.deriveFont(f.getStyle() | Font.BOLD));
         tableHead.setForeground(new Color(191, 0, 24));
         
-        message.setText("Veuillez choisir un utilisateur dans le tableau de droite ou saisir les données à creer");
+        message.setText("Veuillez choisir une location dans le tableau de droite ou saisir les données à creer");
         chargerLesUtilisateurs();
     }
 
@@ -61,10 +61,9 @@ public class ListLocation extends javax.swing.JFrame {
 
         Entete = new javax.swing.JLabel();
         tbScrollPane = new javax.swing.JScrollPane();
-        tbUtilisateur = new javax.swing.JTable();
+        tbLocationSansChauffeur = new javax.swing.JTable();
         jPanelSaisie = new javax.swing.JPanel();
         jLabelNom = new javax.swing.JLabel();
-        uiLocation = new javax.swing.JTextField();
         jLabelPrenom = new javax.swing.JLabel();
         jLabelPseudo = new javax.swing.JLabel();
         jLabelMail = new javax.swing.JLabel();
@@ -88,6 +87,7 @@ public class ListLocation extends javax.swing.JFrame {
         uiMontant = new javax.swing.JFormattedTextField();
         uiNbKmDepart = new javax.swing.JFormattedTextField();
         uiDateLocation = new javax.swing.JFormattedTextField();
+        uiLocation = new javax.swing.JTextField();
         message = new javax.swing.JLabel();
         jPanelBt = new javax.swing.JPanel();
         Parametre = new javax.swing.JButton();
@@ -119,7 +119,7 @@ public class ListLocation extends javax.swing.JFrame {
         tbScrollPane.setBackground(new java.awt.Color(255, 255, 255));
         tbScrollPane.setOpaque(false);
 
-        tbUtilisateur.setModel(new javax.swing.table.DefaultTableModel(
+        tbLocationSansChauffeur.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -135,21 +135,21 @@ public class ListLocation extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tbUtilisateur.setOpaque(false);
-        tbUtilisateur.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        tbUtilisateur.addMouseListener(new java.awt.event.MouseAdapter() {
+        tbLocationSansChauffeur.setOpaque(false);
+        tbLocationSansChauffeur.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tbLocationSansChauffeur.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tbUtilisateurMouseClicked(evt);
+                tbLocationSansChauffeurMouseClicked(evt);
             }
         });
-        tbUtilisateur.addKeyListener(new java.awt.event.KeyAdapter() {
+        tbLocationSansChauffeur.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                tbUtilisateurKeyReleased(evt);
+                tbLocationSansChauffeurKeyReleased(evt);
             }
         });
-        tbScrollPane.setViewportView(tbUtilisateur);
-        if (tbUtilisateur.getColumnModel().getColumnCount() > 0) {
-            tbUtilisateur.getColumnModel().getColumn(2).setResizable(false);
+        tbScrollPane.setViewportView(tbLocationSansChauffeur);
+        if (tbLocationSansChauffeur.getColumnModel().getColumnCount() > 0) {
+            tbLocationSansChauffeur.getColumnModel().getColumn(2).setResizable(false);
         }
 
         getContentPane().add(tbScrollPane);
@@ -162,10 +162,6 @@ public class ListLocation extends javax.swing.JFrame {
         jLabelNom.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabelNom.setForeground(new java.awt.Color(252, 220, 49));
         jLabelNom.setText("N°Location");
-
-        uiLocation.setBackground(new java.awt.Color(255,255,255,120));
-        uiLocation.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        uiLocation.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabelPrenom.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabelPrenom.setForeground(new java.awt.Color(252, 220, 49));
@@ -310,13 +306,12 @@ public class ListLocation extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(uiDateDepartPrevu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addComponent(uiImmat, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                                                .addComponent(uiLocation))
+                                            .addComponent(uiImmat, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(uiCoutEstime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(uiMontant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(uiNbKmDepart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(uiDateLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                            .addComponent(uiDateLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(uiLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(uiPhrase, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))
                             .addGroup(jPanelSaisieLayout.createSequentialGroup()
@@ -343,7 +338,7 @@ public class ListLocation extends javax.swing.JFrame {
             .addGroup(jPanelSaisieLayout.createSequentialGroup()
                 .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelNom, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(uiLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(uiLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -494,30 +489,63 @@ public class ListLocation extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     // Positionner les valeurs de la zone de texte 
-    private void tbUtilisateurMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbUtilisateurMouseClicked
-        // TODO add your handling code here:
+    private void tbLocationSansChauffeurMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbLocationSansChauffeurMouseClicked
+
         changeSelectUt();
-    }//GEN-LAST:event_tbUtilisateurMouseClicked
+    }//GEN-LAST:event_tbLocationSansChauffeurMouseClicked
 
         private void CreerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreerMouseClicked
             // TODO add your handling code here:
             // mise à jour de la liste
-            if (lesUtilisateurs.get(uiModele.getText().strip()) != null) {
+            //Controle de saisie
+            /*if (lesLSC.get(uiLocation.getText().strip()) != null) {
                 alert("Utilisateur déjà existant ; veuillez choisir un autre pseudo.");
                 return;
             }
-            if ("".equals(uiImmat.getText().strip()) || "".equals(uiMP.getText().strip())) {
-                alert("Saisir au moins un nom et un mot de passe.");
+            if ("".equals(uiLocation.getText().strip())){
+                alert("Saisir le N°location");
                 return;
             }
-            if ("".equals(uiDescription.getText().strip()) || "".equals(uiNumpost)) {
-                alert("Saisir le code postal et renseigner la ville.");
+            if ("".equals(uiDateLocation.getText().strip())){
+                alert("Saisir la date de location");
                 return;
             }
-            
+            if ("".equals(uiMontant)){
+                alert("Saisir le montant");
+                return;
+            }
+            if ("".equals(uiDateDepartPrevu)){
+                alert("Saisir la date de départ");
+                return;
+            }
+            if ("".equals(uiDateRetourPrevu)){
+                alert("Saisir la date de retour");
+                return;
+            }            
+            if ("".equals(uiImmat)){
+                alert("Saisir l'immatriculation");
+                return;
+            }
+            if ("".equals(uiNbKmDepart)){
+                alert("Saisir le kilomtrage");
+                return;
+            }
+            if ("".equals(uiCoutEstime)){
+                alert("Saisir le cout");
+                return;
+            }
+            if ("".equals(uiAssuranceComp)){
+                alert("Saisir l'assurance");
+                return;
+            }
+            if ("".equals(uiFormule)){
+                alert("Saisir la Formule");
+                return;
+            }
+            */
             // création de la LSC
             LocationSansChauffeur uneLSC = new LocationSansChauffeur();
-            uneLSC.setNumLocation(uiLocation.getText().strip());
+            uneLSC.setNumLocation(jFormattedTextField1.getText().strip());
             uneLSC.setDateLocation(uiDateLocation.getText().strip());
             uneLSC.setMontantRegle(uiMontant.getText().strip());
             uneLSC.setNbKmDepart(uiDateDepartPrevu.getText().strip());
@@ -540,7 +568,7 @@ public class ListLocation extends javax.swing.JFrame {
 
         private void ViderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ViderMouseClicked
             // TODO add your handling code here:
-            tbUtilisateur.getSelectionModel().clearSelection();
+            tbLocationSansChauffeur.getSelectionModel().clearSelection();
             message.setText("Vous pouvez saisir un nouvel utilisateur !");
             viderSaisie();
         }//GEN-LAST:event_ViderMouseClicked
@@ -564,12 +592,12 @@ public class ListLocation extends javax.swing.JFrame {
             // TODO add your handling code here:
 
             // mise à jour de la liste
-            int i = tbUtilisateur.getSelectedRow();
+            int i = tbLocationSansChauffeur.getSelectedRow();
             if (i < 0) {
                 alert("Aucune donnée n'est selectionnée en modification ; veuillez choisir un utilisateur.");
                 return;
             }
-            TableModel model = tbUtilisateur.getModel();
+            TableModel model = tbLocationSansChauffeur.getModel();
             Utilisateur unUtilisateur = lesUtilisateurs.get(model.getValueAt(i, 2).toString().strip());
             if (!unUtilisateur.getUtPseudo().equals(uiModele.getText().strip())) {
                 alert("Vous ne pouvez pas modifier le pseudo de l'utilisateur (creez en un autre puis supprimez l'ancien). ("
@@ -600,19 +628,19 @@ public class ListLocation extends javax.swing.JFrame {
 
         }//GEN-LAST:event_ModifierMouseClicked
 
-    private void tbUtilisateurKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbUtilisateurKeyReleased
+    private void tbLocationSansChauffeurKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbLocationSansChauffeurKeyReleased
         // TODO add your handling code here:
         changeSelectUt();
-    }//GEN-LAST:event_tbUtilisateurKeyReleased
+    }//GEN-LAST:event_tbLocationSansChauffeurKeyReleased
 
     private void SupprimerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SupprimerMouseClicked
         // TODO add your handling code here:
-        int i = tbUtilisateur.getSelectedRow();
+        int i = tbLocationSansChauffeur.getSelectedRow();
         if (i < 0) {
             alert("Aucune donnée n'est selectionnée; veuillez selectionner l'utilisateur a supprimer.");
             return;
         }
-        DefaultTableModel uiTable = (DefaultTableModel) tbUtilisateur.getModel();
+        DefaultTableModel uiTable = (DefaultTableModel) tbLocationSansChauffeur.getModel();
         String pseudo = uiTable.getValueAt(i, 2).toString();
         // mise à jour de la bd
         dao.delete(pseudo);
@@ -634,25 +662,20 @@ public class ListLocation extends javax.swing.JFrame {
     }//GEN-LAST:event_uiDateLocationActionPerformed
 
     // methode pour changer d'utilisateur
-    public void changeSelectUt() {
+    //ENCOURS
+    public void changeSelectLocation() {
         // pointer sur le colonne selectionnée
-        int i = tbUtilisateur.getSelectedRow();
+        int i = tbLocationSansChauffeur.getSelectedRow();
         //System.out.println("selected row=" + i);
         // récupérer les données de l'utilisateur
         // utiliser les données du tableau ou ...
-        TableModel model = tbUtilisateur.getModel();
-        Utilisateur unUtilisateur = lesUtilisateurs.get(model.getValueAt(i, 2).toString());
-        uiImmat.setText(unUtilisateur.getUtNom());
-        uiDateAchat.setText(unUtilisateur.getUtPrenom());
-        uiModele.setText(unUtilisateur.getUtPseudo());
-        uiTarif.setText(unUtilisateur.getUtMail());
-        uiMP.setText(unUtilisateur.getUtMp());
-        uiPhrase.setText(unUtilisateur.getUtPhrase());
-        uiAdr1.setText(unUtilisateur.getUtAdr1());
-    //    uiAdr2.setText(unUtilisateur.getUtAdr2());
-        uiDescription.setText(unUtilisateur.utCommune.getCode_Postal());
-        uiNumpost = unUtilisateur.utCommune.getNum_Postal();
-    //    uiCommune.setText(unUtilisateur.utCommune.getNom_Commune());
+        TableModel model = tbLocationSansChauffeur.getModel();
+        LocationSansChauffeur uneLSC = lesLSC.get(model.getValueAt(i, 2).toString());
+        uiImmat.setText(uneLSC.getNumLocation());
+        uiDateLocation.setText(uneLSC.getDateLocation());
+        uiDepart.setText(uneLSC.getDateDepartPrevu());
+        uiDateRetour.setText(uneLSC.getDateRetourPrevu());
+
     }
 
     // methode pour afficher un message
@@ -670,38 +693,36 @@ public class ListLocation extends javax.swing.JFrame {
     }
 
     //delete details in the db
-    public void delete(String pseudo) {
+    public void delete(String numLocation) {
 
     }
 
     // methode pour vider les champs de texte de l'écran
     private void viderSaisie() {
+        uiLocation.setText("");
+        uiDateLocation.setText("");
+        uiMontant.setText("");
+        uiDateDepartPrevu.setText("");
+        uiDateRetourPrevu.setText("");
         uiImmat.setText("");
-        uiDateAchat.setText("");
-        uiModele.setText("");
-        uiTarif.setText("");
-        uiMP.setText("");
-        uiPhrase.setText("");
-        uiAdr1.setText("");
-    //    uiAdr2.setText("");
-        uiDescription.setText("");
-        uiNumpost = "";
-    //    uiCommune.setText("");
-        avatar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ressource/user-tie-min.jpg")));
+        uiNbKmDepart.setText("");
+        uiCoutEstime.setText("");
+        uiAssuranceComp.setText("");
+        uiFormule.setText("");
 
     }
 
     // chargerLesUtilisateurs 
     private void chargerLesUtilisateurs() {
 
-        lesUtilisateurs.clear();
-        lesUtilisateurs = UtilisateurDAO.getLesUtilisateurs();
+        lesLSC.clear();
+        lesLSC = UtilisateurDAO.getLesUtilisateurs();
         chargerTableauUtilisateurs();
     }
 
     private void chargerTableauUtilisateurs() {
 
-        DefaultTableModel uiTable = (DefaultTableModel) tbUtilisateur.getModel();
+        DefaultTableModel uiTable = (DefaultTableModel) tbLocationSansChauffeur.getModel();
         int j = uiTable.getRowCount();
         //System.out.println("Row count=" + j);
         for (int i = j - 1; i >= 0; i--) {
@@ -718,7 +739,7 @@ public class ListLocation extends javax.swing.JFrame {
 
             uiTable.addRow(row);
             if(pseudo.equals(uiModele.getText().strip())) {
-                tbUtilisateur.setRowSelectionInterval(i, i);
+                tbLocationSansChauffeur.setRowSelectionInterval(i, i);
             }
             i++;
         }
@@ -747,8 +768,8 @@ public class ListLocation extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelBt;
     private javax.swing.JPanel jPanelSaisie;
     private javax.swing.JLabel message;
+    private javax.swing.JTable tbLocationSansChauffeur;
     private javax.swing.JScrollPane tbScrollPane;
-    private javax.swing.JTable tbUtilisateur;
     private javax.swing.JTextField uiAssuranceComp;
     private javax.swing.JLabel uiBackground;
     private javax.swing.JFormattedTextField uiCoutEstime;

@@ -86,7 +86,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="tbUtilisateur">
+        <Component class="javax.swing.JTable" name="tbLocationSansChauffeur">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="4" rowCount="0">
@@ -127,8 +127,8 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tbUtilisateurMouseClicked"/>
-            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tbUtilisateurKeyReleased"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tbLocationSansChauffeurMouseClicked"/>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tbLocationSansChauffeurKeyReleased"/>
           </Events>
         </Component>
       </SubComponents>
@@ -183,14 +183,12 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="uiDateDepartPrevu" min="-2" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                                  <Component id="uiImmat" alignment="0" pref="250" max="32767" attributes="0"/>
-                                                  <Component id="uiLocation" alignment="1" max="32767" attributes="0"/>
-                                              </Group>
+                                              <Component id="uiImmat" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
                                               <Component id="uiCoutEstime" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="uiMontant" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="uiNbKmDepart" alignment="0" min="-2" max="-2" attributes="0"/>
                                               <Component id="uiDateLocation" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="uiLocation" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -229,7 +227,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabelNom" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                      <Component id="uiLocation" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="uiLocation" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -306,19 +304,6 @@
               <Color blue="31" green="dc" red="fc" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="N&#xb0;Location"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="uiLocation">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="new java.awt.Color(255,255,255,120)" type="code"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="SansSerif" size="12" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelPrenom">
@@ -579,6 +564,8 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="uiDateLocationActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="uiLocation">
         </Component>
       </SubComponents>
     </Container>
