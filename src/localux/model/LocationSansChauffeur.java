@@ -16,7 +16,9 @@ public class LocationSansChauffeur extends Location {
         this.nbKmRetour = nbKmDepart;
         this.laFormule = laFormule;
     }
-
+    public LocationSansChauffeur(){
+        super();
+    }
     public int getNbKmDepart() {
         return nbKmDepart;
     }

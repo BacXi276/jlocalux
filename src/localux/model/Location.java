@@ -16,7 +16,9 @@ public abstract class Location {
         this.montantRegle = montantRegle;
         this.leVehicule = leVehicule;
     }
-
+    public Location(){
+        
+    }
     public int getNumLocation() {
         return numLocation;
     }
