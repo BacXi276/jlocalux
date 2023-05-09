@@ -1,0 +1,30 @@
+REQUETTES location:
+
+INSERT INTO Location (numLocation, dateLocation, montantRegle,
+dateHreDepartPrevu,dateHreDepartReel,
+dateHreRetourPrevu,dateHreRetourReel)
+VALUES (50,'2023-05-09',1000,
+'2023-05-10 11:00:00 AM','2023-06-09 11:00:00 AM',
+'2024-05-10 11:00:00 AM','2024-06-09 11:00:00 AM' );
+
+UPDATE Location
+SET dateLocation='2023-05-09', montantRegle=1000, 
+dateHreDepartPrevu='2023-05-10 11:00:00 AM',dateHreDepartReel='2023-06-09 11:00:00 AM',
+dateHreRetourPrevu='2024-05-10 11:00:00 AM',dateHreRetourReel='2024-06-09 11:00:00 AM'
+WHERE numLocation=50
+
+REQUETTES LocationSansChauffeur:
+
+INSERT INTO LocationSansChauffeur (numLocation, nbKmDepart, nbKmRetour,
+CoutEstimeReparations,idAssuranceComp)
+VALUES (50,15000,20000,100,1);
+ATTENTION ERREUR COURANTE: Cannot add or update a child row: a foreign key constraint fails 
+	-> Il faut ajouter une location avec le même numLocation dans la table location avant l'insert dans LocationSansChauffeur
+
+REQUETTES AssuranceComplémentaire:
+
+INSERT INTO AssuranceComplémentaire (idAssuranceComp, nmAssuranceComp,descriptionAssuranceComp)
+VALUES (1,'Premiere AssuranceComp','la premiere');
+
+MANDATORY pour les resultats de requettes: getString/getInt....
+https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getObject%28java.lang.String%29

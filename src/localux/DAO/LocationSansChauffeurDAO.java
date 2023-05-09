@@ -8,9 +8,10 @@ import localux.model.LocationSansChauffeur;
 import localux.technic.ConnectDB;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.TreeMap;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class LocationSansChauffeurDAO implements LocationSansChauffeurDAOInterface {
 
@@ -29,7 +30,7 @@ public class LocationSansChauffeurDAO implements LocationSansChauffeurDAOInterfa
             JOptionPane.showMessageDialog(null, "DB : Enregistrement créé !");
         } catch (Exception e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "DB : Erreur lors de la création de l'utilisateur");
+            JOptionPane.showMessageDialog(null, "DB : Erreur lors de la création de location");
         }
     }
 
@@ -50,7 +51,7 @@ public class LocationSansChauffeurDAO implements LocationSansChauffeurDAOInterfa
             JOptionPane.showMessageDialog(null, "DB : Enregistrement mis à jour !");
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "DB : Erreur lors de la mise à jour de l'utilisateur");
+            JOptionPane.showMessageDialog(null, "DB : Erreur lors de la mise à jour de location");
         }
 
     }
@@ -66,7 +67,7 @@ public class LocationSansChauffeurDAO implements LocationSansChauffeurDAOInterfa
             JOptionPane.showMessageDialog(null, "DB : Enregistrement supprimé !");
         } catch (Exception e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "DB : Erreur lors de la suppression de l'utilisateur");
+            JOptionPane.showMessageDialog(null, "DB : Erreur lors de la suppression de location");
         }
     }
 
@@ -99,7 +100,7 @@ public class LocationSansChauffeurDAO implements LocationSansChauffeurDAOInterfa
 
         } catch (Exception e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "DB : Erreur lors du chargement de l'utilisateur");
+            JOptionPane.showMessageDialog(null, "DB : Erreur lors du chargement de la location");
         }
         return loc;
     }
@@ -112,10 +113,18 @@ public class LocationSansChauffeurDAO implements LocationSansChauffeurDAOInterfa
             String sql = "SELECT * FROM LocationSansChauffeur ORDER BY numLocation;";
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
-
+            ResultSetMetaData rsmd=rs.getMetaData();
+            //DefaultTableModel modelDefault=(DefaultTableModel) tbLocationSansChauffeur.getModel();
+            //ERREUR CAR tbLocationSansChauffeur n'est pas sur cette page c'est le tableau de ListLocation
+            //Nom des colonnes
+            int cols=rsmd.getColumnCount();
+            String[] colName=new String[cols];
+            for(int i=0;i<cols;i++)
+                    colName[i]=rsmd.getColumnName(i+1);
+            model.setColumnIdentifiers(colName);
             while (rs.next()) {
                 LocationSansChauffeur loc = new LocationSansChauffeur();
-                loc.setNumLocation(Integer.parseInt(rs.getString("numLocation").strip()));
+                loc.setNumLocation(Integer.parseInt(rs.getString("numLocation")));
                 loc.setNbKmDepart(Integer.parseInt(rs.getString("nbKmDepart")));
                 loc.setNbKmRetour(Integer.parseInt(rs.getString("nbKmRetour")));
 
@@ -124,7 +133,7 @@ public class LocationSansChauffeurDAO implements LocationSansChauffeurDAOInterfa
 
         } catch (Exception e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "DB : Erreur lors du chargement des utilisateurs");
+            JOptionPane.showMessageDialog(null, "DB : Erreur lors du chargement des locations");
         }
         return list;
     }

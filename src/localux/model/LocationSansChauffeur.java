@@ -6,7 +6,9 @@ public class LocationSansChauffeur extends Location {
 
     //Attributs privés
     private int nbKmDepart; // kilométrage au compteur lors du retrait du véhicule
-    private int nbKmRetour; // kilométrage au compteur lors de la restitution 
+    private int nbKmRetour; // kilométrage au compteur lors de la restitution
+    private LocalDateTime dateDepartPrevu;
+    private LocalDateTime dateRetourPrevu;
     private Formule laFormule;
 
     //LocationSansChauffeur(1, LocalDateTime.of(2018,2,15,0,0), 240, 25000, leVehicule, laFormule);
@@ -49,4 +51,20 @@ public class LocationSansChauffeur extends Location {
         double montant = 0.0;
         return montant;
     }
+    
+    public LocalDateTime getDateDepartPrevu() {
+        return dateDepartPrevu;
+    }
+    public void setDateDepartPrevu(LocalDateTime dateDepartPrevu) {
+        this.dateDepartPrevu= dateDepartPrevu;
+    }
+    
+    public LocalDateTime getDateRetourPrevu() {
+        return dateRetourPrevu;
+    }
+    public void setDateRetourPrevu(LocalDateTime dateRetourPrevu) {
+        this.dateRetourPrevu=dateRetourPrevu;
+    }
+
+
 }
