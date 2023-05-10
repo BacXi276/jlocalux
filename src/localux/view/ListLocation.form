@@ -89,11 +89,12 @@
         <Component class="javax.swing.JTable" name="tbLocationSansChauffeur">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="0">
-                <Column editable="false" title="N&#xb0;Location" type="java.lang.Object"/>
-                <Column editable="false" title="Date Location" type="java.lang.Object"/>
-                <Column editable="false" title="Date Depart Pr&#xe9;vu" type="java.lang.Object"/>
-                <Column editable="true" title="Date Retour Pr&#xe9;vu" type="java.lang.Object"/>
+              <Table columnCount="5" rowCount="0">
+                <Column editable="false" title="N&#xb0;Location" type="java.lang.String"/>
+                <Column editable="false" title="Nb Km Depart" type="java.lang.String"/>
+                <Column editable="false" title="Nb Km Retour" type="java.lang.String"/>
+                <Column editable="false" title="Cout Reparation" type="java.lang.String"/>
+                <Column editable="true" title="id Assurance" type="java.lang.String"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -108,7 +109,12 @@
                   <Editor/>
                   <Renderer/>
                 </Column>
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                   <Title/>
                   <Editor/>
                   <Renderer/>
@@ -175,11 +181,13 @@
                                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="uiImmat" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
-                                      <Component id="uiNbKmDepart" min="-2" max="-2" attributes="0"/>
-                                      <Component id="uiDateLocation" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="uiLocation" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="uiMontant" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="uiDateDepartPrevu" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="uiDateDepartPrevu" alignment="0" pref="140" max="32767" attributes="0"/>
+                                          <Component id="uiMontant" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="uiDateLocation" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="uiLocation" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Component id="uiNbKmDepart" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="uiPhrase" pref="178" max="32767" attributes="0"/>
@@ -201,7 +209,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jLabelMail2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="uiDateRetourPrevu" min="-2" max="-2" attributes="0"/>
+                                  <Component id="uiDateRetourPrevu" min="-2" pref="138" max="-2" attributes="0"/>
                               </Group>
                               <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jLabelNom" alignment="0" max="32767" attributes="0"/>
@@ -212,8 +220,8 @@
                                   <Component id="jLabelMail5" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="uiCoutEstime" min="-2" max="-2" attributes="0"/>
                                       <Component id="uiAssuranceComp" min="-2" pref="212" max="-2" attributes="0"/>
+                                      <Component id="uiCoutEstime" min="-2" pref="139" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -221,6 +229,11 @@
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                  <Component id="showData" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -284,7 +297,9 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="98" max="32767" attributes="0"/>
+                  <EmptySpace pref="44" max="32767" attributes="0"/>
+                  <Component id="showData" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="Vider" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="Creer" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -393,6 +408,7 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="CreerMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CreerActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Modifier">
@@ -408,6 +424,7 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ModifierMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ModifierActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Supprimer">
@@ -542,6 +559,14 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="uiCoutEstimeActionPerformed"/>
           </Events>
         </Component>
+        <Component class="javax.swing.JToggleButton" name="showData">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Show Data"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="showDataMouseClicked"/>
+          </Events>
+        </Component>
       </SubComponents>
     </Container>
     <Component class="javax.swing.JLabel" name="message">
@@ -631,6 +656,7 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ParametreMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ParametreActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Aide">

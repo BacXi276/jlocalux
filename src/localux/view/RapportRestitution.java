@@ -281,7 +281,7 @@ public class RapportRestitution extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void uiValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uiValiderActionPerformed
-         DefaultTableModel model = (DefaultTableModel) table.getModel();
+         /*DefaultTableModel model = (DefaultTableModel) table.getModel();
 
         for (int i = 0; model.getRowCount() > i; i++) {
             final String col1 = (String) model.getValueAt(i, 0);
@@ -289,7 +289,7 @@ public class RapportRestitution extends javax.swing.JFrame {
 
             System.out.println("Row: " + i + " Col 0: " + col1);
             System.out.println("Row: " + i + " Col 1: " + col2);
-        }
+        }*/
     }//GEN-LAST:event_uiValiderActionPerformed
 
     private void uiNomPieceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uiNomPieceActionPerformed

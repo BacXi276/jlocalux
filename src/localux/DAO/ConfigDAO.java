@@ -47,7 +47,7 @@ public class ConfigDAO implements ConfigDAOInterface {
             c.setMailPass(crypt.decode(passSMTP, "PRIV"));
             c.setSgbdPass(crypt.decode(passDB, "PRIV"));
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Config : Erreur lors de l'initialisation du parametrage ");
+            JOptionPane.showMessageDialog(null, "Config : Erreur lors de l'initialisation du parametrage");
         }
         return c;
     }

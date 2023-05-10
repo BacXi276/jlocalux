@@ -121,7 +121,7 @@ public class LocationSansChauffeurDAO implements LocationSansChauffeurDAOInterfa
             String[] colName=new String[cols];
             for(int i=0;i<cols;i++)
                     colName[i]=rsmd.getColumnName(i+1);
-            model.setColumnIdentifiers(colName);
+            //model.setColumnIdentifiers(colName);
             while (rs.next()) {
                 LocationSansChauffeur loc = new LocationSansChauffeur();
                 loc.setNumLocation(Integer.parseInt(rs.getString("numLocation")));
@@ -136,6 +136,20 @@ public class LocationSansChauffeurDAO implements LocationSansChauffeurDAOInterfa
             JOptionPane.showMessageDialog(null, "DB : Erreur lors du chargement des locations");
         }
         return list;
+    }
+        public static void showDataOnTable() {
+        /*try {
+
+            Connection con = ConnectDB.getConnect();
+            String sql = "delete from LocationSansChauffeur  WHERE numLocation=?";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, numLocation);
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "DB : Enregistrement supprimé !");
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "DB : Erreur lors de la suppression de location");
+        }*/
     }
 
 }
