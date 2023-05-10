@@ -13,6 +13,7 @@ dateHreDepartPrevu='2023-05-10 11:00:00 AM',dateHreDepartReel='2023-06-09 11:00:
 dateHreRetourPrevu='2024-05-10 11:00:00 AM',dateHreRetourReel='2024-06-09 11:00:00 AM'
 WHERE numLocation=50
 
+
 REQUETTES LocationSansChauffeur:
 
 INSERT INTO LocationSansChauffeur (numLocation, nbKmDepart, nbKmRetour,
@@ -21,10 +22,32 @@ VALUES (50,15000,20000,100,1);
 ATTENTION ERREUR COURANTE: Cannot add or update a child row: a foreign key constraint fails 
 	-> Il faut ajouter une location avec le même numLocation dans la table location avant l'insert dans LocationSansChauffeur
 
+
 REQUETTES AssuranceComplémentaire:
 
 INSERT INTO AssuranceComplémentaire (idAssuranceComp, nmAssuranceComp,descriptionAssuranceComp)
 VALUES (1,'Premiere AssuranceComp','la premiere');
+
+
+REQUETTE Salarie:
+
+INSERT INTO Salarie (idSalarie, nomSalarie, PrenomSalarie)
+VALUES (1,'SANHES','Lucas');
+
+REQUETTE Controle :
+
+INSERT INTO Controle (idControle, dateHreControle, observation,idSalarie)
+VALUES (1,'2023-05-09','Aucun dommage constaté',1);
+
+REQUETTE Piece:
+
+INSERT INTO Piece (idPiece,nomPiece)
+VALUES ('AAVG','Aile AV G');
+
+REQUETTE Gravite : 
+
+INSERT INTO Gravite(idGravite,libelleGravite)
+VALUES ('RS','Rayure superficielle');
 
 MANDATORY pour les resultats de requettes: getString/getInt....
 https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getObject%28java.lang.String%29
