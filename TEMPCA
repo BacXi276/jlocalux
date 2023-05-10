@@ -1,0 +1,8 @@
+1. En tant qu’utilisateur (employé de localux), je veux pouvoir soumettre un rapport au retrait du
+véhicule loué et à sa restitution faisant rapport du kilométrage, des dommages et leurs gravités,
+…
+2. En tant qu’utilisateur (employé de localux), je veux que le rapport me permette de savoir si le client à
+respecter son forfait et si les potentiels dommages sont pris en compte par l’assurance
+souscrite.
+3. En tant qu’utilisateur (employé de localux), je veux que pouvoir apporter des modifications, ajouter,
+supprimer et visualiser les locations sans chauffeurs.
