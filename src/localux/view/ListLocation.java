@@ -83,7 +83,6 @@ public class ListLocation extends javax.swing.JFrame {
         jLabelPrenom = new javax.swing.JLabel();
         jLabelPseudo = new javax.swing.JLabel();
         jLabelMail = new javax.swing.JLabel();
-        uiPhrase = new javax.swing.JLabel();
         jLabelMail1 = new javax.swing.JLabel();
         Vider = new javax.swing.JButton();
         Creer = new javax.swing.JButton();
@@ -105,6 +104,14 @@ public class ListLocation extends javax.swing.JFrame {
         uiNbKmDepart = new javax.swing.JTextField();
         uiCoutEstime = new javax.swing.JTextField();
         showData = new javax.swing.JToggleButton();
+        jLabelNom1 = new javax.swing.JLabel();
+        jLabelNom2 = new javax.swing.JLabel();
+        jLabelNom3 = new javax.swing.JLabel();
+        jLabelMail6 = new javax.swing.JLabel();
+        uiKmDepart = new javax.swing.JTextField();
+        uiKmRetour = new javax.swing.JTextField();
+        uiCoutRepa = new javax.swing.JTextField();
+        uiAssurance = new javax.swing.JTextField();
         message = new javax.swing.JLabel();
         jPanelBt = new javax.swing.JPanel();
         Parametre = new javax.swing.JButton();
@@ -182,7 +189,7 @@ public class ListLocation extends javax.swing.JFrame {
 
         jLabelNom.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabelNom.setForeground(new java.awt.Color(252, 220, 49));
-        jLabelNom.setText("N°Location");
+        jLabelNom.setText("Nb Km depart :");
 
         jLabelPrenom.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabelPrenom.setForeground(new java.awt.Color(252, 220, 49));
@@ -195,10 +202,6 @@ public class ListLocation extends javax.swing.JFrame {
         jLabelMail.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabelMail.setForeground(new java.awt.Color(252, 220, 49));
         jLabelMail.setText("Date Depart Prévu");
-
-        uiPhrase.setBackground(new java.awt.Color(255, 255, 255));
-        uiPhrase.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        uiPhrase.setForeground(new java.awt.Color(204, 0, 51));
 
         jLabelMail1.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabelMail1.setForeground(new java.awt.Color(252, 220, 49));
@@ -310,10 +313,30 @@ public class ListLocation extends javax.swing.JFrame {
             }
         });
 
+        jLabelNom1.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabelNom1.setForeground(new java.awt.Color(252, 220, 49));
+        jLabelNom1.setText("N°Location");
+
+        jLabelNom2.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabelNom2.setForeground(new java.awt.Color(252, 220, 49));
+        jLabelNom2.setText("Cout Reparation :");
+
+        jLabelNom3.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabelNom3.setForeground(new java.awt.Color(252, 220, 49));
+        jLabelNom3.setText("Nb Km Retour :");
+
+        jLabelMail6.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        jLabelMail6.setForeground(new java.awt.Color(252, 220, 49));
+        jLabelMail6.setText("Assurance");
+
         javax.swing.GroupLayout jPanelSaisieLayout = new javax.swing.GroupLayout(jPanelSaisie);
         jPanelSaisie.setLayout(jPanelSaisieLayout);
         jPanelSaisieLayout.setHorizontalGroup(
             jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelSaisieLayout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(showData)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanelSaisieLayout.createSequentialGroup()
                 .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelSaisieLayout.createSequentialGroup()
@@ -332,23 +355,32 @@ public class ListLocation extends javax.swing.JFrame {
                                 .addGap(6, 6, 6)
                                 .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(uiImmat, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(uiDateDepartPrevu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                                        .addComponent(uiMontant, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(uiDateLocation, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(uiLocation, javax.swing.GroupLayout.Alignment.LEADING))
-                                    .addComponent(uiNbKmDepart, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(uiPhrase, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))))
-                    .addGroup(jPanelSaisieLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(Creer)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Modifier)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Supprimer)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
-                        .addComponent(Vider))
+                                    .addComponent(uiNbKmDepart, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanelSaisieLayout.createSequentialGroup()
+                                        .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(uiDateDepartPrevu, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                                            .addComponent(uiMontant, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(uiDateLocation, javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(uiLocation, javax.swing.GroupLayout.Alignment.LEADING))
+                                        .addGap(41, 41, 41)
+                                        .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(jPanelSaisieLayout.createSequentialGroup()
+                                                .addComponent(jLabelNom3, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(uiKmRetour))
+                                            .addGroup(jPanelSaisieLayout.createSequentialGroup()
+                                                .addComponent(jLabelNom, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(uiKmDepart, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jPanelSaisieLayout.createSequentialGroup()
+                                                .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabelNom2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabelMail6, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(uiAssurance)
+                                                    .addComponent(uiCoutRepa))))))
+                                .addGap(0, 23, Short.MAX_VALUE))))
                     .addGroup(jPanelSaisieLayout.createSequentialGroup()
                         .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelSaisieLayout.createSequentialGroup()
@@ -356,7 +388,6 @@ public class ListLocation extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(uiDateRetourPrevu, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabelNom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabelPrenom, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
                                 .addComponent(jLabelPseudo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanelSaisieLayout.createSequentialGroup()
@@ -365,69 +396,91 @@ public class ListLocation extends javax.swing.JFrame {
                                 .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(uiAssuranceComp, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(uiCoutEstime, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanelSaisieLayout.createSequentialGroup()
+                        .addComponent(Creer)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Modifier)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Supprimer)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Vider)))
                 .addContainerGap())
-            .addGroup(jPanelSaisieLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(showData)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelSaisieLayout.createSequentialGroup()
+                    .addGap(10, 10, 10)
+                    .addComponent(jLabelNom1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(455, 455, 455)))
         );
         jPanelSaisieLayout.setVerticalGroup(
             jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelSaisieLayout.createSequentialGroup()
-                .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelNom, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(uiLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(uiLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
                 .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelPrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(uiDateLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(uiDateLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelNom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(uiKmDepart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelPseudo, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(uiMontant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(uiMontant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelNom3)
+                    .addComponent(uiKmRetour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelMail, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(uiDateDepartPrevu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanelSaisieLayout.createSequentialGroup()
-                        .addGap(93, 93, 93)
-                        .addComponent(uiPhrase, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelSaisieLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelMail, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(uiDateDepartPrevu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(21, 21, 21)
                         .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabelMail2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(uiDateRetourPrevu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(jPanelSaisieLayout.createSequentialGroup()
+                        .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelNom2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(uiCoutRepa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(uiImmat, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelMail1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelMail3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(uiNbKmDepart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelMail4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(uiCoutEstime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(uiAssuranceComp, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelMail5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(8, 8, 8)
-                        .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelMail7, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(uiFormule, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                .addComponent(showData)
-                .addGap(32, 32, 32)
+                            .addComponent(jLabelMail6, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(uiAssurance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(29, 29, 29)))
                 .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Vider)
+                    .addComponent(uiImmat, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelMail1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelMail3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(uiNbKmDepart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelMail4, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(uiCoutEstime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(uiAssuranceComp, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelMail5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8)
+                .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelMail7, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(uiFormule, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addComponent(showData)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Creer)
                     .addComponent(Modifier)
-                    .addComponent(Supprimer))
-                .addContainerGap())
+                    .addComponent(Supprimer)
+                    .addComponent(Vider))
+                .addGap(38, 38, 38))
+            .addGroup(jPanelSaisieLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelSaisieLayout.createSequentialGroup()
+                    .addGap(10, 10, 10)
+                    .addComponent(jLabelNom1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(416, Short.MAX_VALUE)))
         );
 
         getContentPane().add(jPanelSaisie);
@@ -620,11 +673,18 @@ public class ListLocation extends javax.swing.JFrame {
         
         while(rs.next()){
             //Ajout jusqu'a fin des données de la table
-            String numLocation = String.valueOf(rs.getInt("numLocation"));//conversion due to int value
-            String kmDepart = String.valueOf(rs.getInt("nbKMDepart"));
-            String kmRetour = String.valueOf(rs.getInt("nbKmRetour"));
-            String coutRep = String.valueOf(rs.getInt("CoutEstimeReparations"));
-            String idAssuComp = String.valueOf(rs.getInt("idAssuranceComp"));
+            */
+            LocationSansChauffeur uneLSC =
+                    new LocationSansChauffeur(
+                            Integer.parseInt(uiLocation.getText()),
+                            Integer.parseInt(uiKmDepart.getText()),
+                            Integer.parseInt(uiKmRetour.getText()),
+                            Integer.parseInt(uiCoutRepa.getText()),
+                            Integer.parseInt(uiAssurance.getText()));
+            dao.create(uneLSC);
+
+/*
+ 
             
             String tbLocations[] = {numLocation,kmDepart,kmRetour,coutRep,idAssuComp};
             DefaultTableModel tblModel =(DefaultTableModel) tbLocationSansChauffeur.getModel();
@@ -706,7 +766,7 @@ public class ListLocation extends javax.swing.JFrame {
             model.setValueAt(uiDateLocation.getText(), i, 1);
             // mise à jour de la bd
             dao.update(uneLSC);
-
+            chargerLesLocations();
         }//GEN-LAST:event_ModifierMouseClicked
 
     private void tbLocationSansChauffeurKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbLocationSansChauffeurKeyReleased
@@ -890,8 +950,12 @@ public class ListLocation extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelMail3;
     private javax.swing.JLabel jLabelMail4;
     private javax.swing.JLabel jLabelMail5;
+    private javax.swing.JLabel jLabelMail6;
     private javax.swing.JLabel jLabelMail7;
     private javax.swing.JLabel jLabelNom;
+    private javax.swing.JLabel jLabelNom1;
+    private javax.swing.JLabel jLabelNom2;
+    private javax.swing.JLabel jLabelNom3;
     private javax.swing.JLabel jLabelPrenom;
     private javax.swing.JLabel jLabelPseudo;
     private javax.swing.JPanel jPanelBt;
@@ -900,17 +964,20 @@ public class ListLocation extends javax.swing.JFrame {
     private javax.swing.JToggleButton showData;
     private javax.swing.JTable tbLocationSansChauffeur;
     private javax.swing.JScrollPane tbScrollPane;
+    private javax.swing.JTextField uiAssurance;
     private javax.swing.JTextField uiAssuranceComp;
     private javax.swing.JLabel uiBackground;
     private javax.swing.JTextField uiCoutEstime;
+    private javax.swing.JTextField uiCoutRepa;
     private javax.swing.JTextField uiDateDepartPrevu;
     private javax.swing.JTextField uiDateLocation;
     private javax.swing.JTextField uiDateRetourPrevu;
     private javax.swing.JTextField uiFormule;
     private javax.swing.JTextField uiImmat;
+    private javax.swing.JTextField uiKmDepart;
+    private javax.swing.JTextField uiKmRetour;
     private javax.swing.JTextField uiLocation;
     private javax.swing.JTextField uiMontant;
     private javax.swing.JTextField uiNbKmDepart;
-    private javax.swing.JLabel uiPhrase;
     // End of variables declaration//GEN-END:variables
 }

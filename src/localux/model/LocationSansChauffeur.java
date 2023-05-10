@@ -10,10 +10,12 @@ public class LocationSansChauffeur extends Location {
     private LocalDateTime dateDepartPrevu;
     private LocalDateTime dateRetourPrevu;
     private Formule laFormule;
+    private int coutEstimeRepa;
+    private int assuranceComp;
 
     //LocationSansChauffeur(1, LocalDateTime.of(2018,2,15,0,0), 240, 25000, leVehicule, laFormule);
     public LocationSansChauffeur(int numLocation, LocalDateTime dateLocation,int nbKmDepart, double montantRegle, Vehicule leVehicule, Formule laFormule) {
-        super(numLocation, dateLocation, montantRegle, leVehicule);
+        super(numLocation, dateLocation, montantRegle, leVehicule); //Il existe un constructeur qui prend en parametre (numLocation, dateLocation, montantRegle, leVehicule)
         this.nbKmDepart = nbKmDepart;
         this.nbKmRetour = nbKmDepart;
         this.laFormule = laFormule;
@@ -21,6 +23,26 @@ public class LocationSansChauffeur extends Location {
     public LocationSansChauffeur(){
         super();
     }
+    //TEST SURCHARGE 
+    public LocationSansChauffeur(int numLocation, int kmDepart, int kmRetour,int coutRepa,int assuranceComp ){
+        this.nbKmDepart = nbKmDepart;
+        this.nbKmRetour = nbKmDepart;
+        this.coutEstimeRepa = coutRepa;
+        this.assuranceComp = assuranceComp;
+    }
+    public int getCoutRepa() {
+        return coutEstimeRepa;
+    }
+    public void setCoutRepa(int coutRepa) {
+        this.coutEstimeRepa= coutRepa;
+    }
+    public int getAssuranceComp() {
+        return coutEstimeRepa;
+    }
+    public void setAssuranceComp(int idAssuComp) {
+        this.assuranceComp= idAssuComp;
+    }
+    
     public int getNbKmDepart() {
         return nbKmDepart;
     }

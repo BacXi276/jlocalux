@@ -1,3 +1,19 @@
 "Config : Erreur lors de l'initialisation du parametrage" ConfigDAO fucked
 ListLocation chargerLesLocations devrait être bon
 ListLocation CreerMouseClicked modif a faire
+
+LocationSansChauffeurDAO
+LocationSansChauffeur
+LocationSansChauffeurDAOInterface
+ListLocation
+ModifierMouseClicked
+Marche sauf que erreur forreign key constrain 
+Solution: 
+Si on créer une LSC il faut avant créer un Loc avec same idea value are w/e
+-> REGLE
+
+new pb index out of range 11>10 
+solution:
+changer la méthode d'insert ou en faire 2 diff PROB EN FAIRE 2 diff 
+1 insert on loc just numloc
+puis 1 insert on LSC avec all data

@@ -19,13 +19,23 @@ public class LocationSansChauffeurDAO implements LocationSansChauffeurDAOInterfa
 
         try {
             Connection con = ConnectDB.getConnect();
-            String sql = "INSERT INTO LocationSansChauffeur (numLocation, nbKmDepart, nbKMRetour,CoutEstimeReparations, idAssuranceComp) VALUES (?,?,?,?,?)";
+            String sql = "INSERT INTO Location (numLocation, dateLocation, montantRegle,dateHreDepartPrevu, dateHreDepartReel,dateHreRetourPrevu,dateHreRetourReel) VALUES (?,?,?,?,?);"
+                        + "INSERT INTO LocationSansChauffeur (numLocation, nbKmDepart, nbKMRetour,CoutEstimeReparations, idAssuranceComp) VALUES (?,?,?,?,?)";
             PreparedStatement ps = con.prepareStatement(sql);
+            //Location
             ps.setString(1, Integer.toString(locSansChauffeur.getNumLocation()));
-            ps.setString(2, Integer.toString(locSansChauffeur.getNbKmDepart()));
-            ps.setString(3, Integer.toString(locSansChauffeur.getNbKmRetour()));
-            ps.setString(4, "0");
-            ps.setString(5, "0");
+            ps.setString(2, null);
+            ps.setString(3, null);
+            ps.setString(4, null);
+            ps.setString(5, null);
+            ps.setString(6, null);
+            ps.setString(7, null);
+            //Location Sans chauffeur
+            ps.setString(8, Integer.toString(locSansChauffeur.getNumLocation()));
+            ps.setString(9, Integer.toString(locSansChauffeur.getNbKmDepart()));
+            ps.setString(10, Integer.toString(locSansChauffeur.getNbKmRetour()));
+            ps.setString(11, Integer.toString(locSansChauffeur.getCoutRepa()));
+            ps.setString(12, Integer.toString(locSansChauffeur.getAssuranceComp()));
             ps.executeUpdate();
             JOptionPane.showMessageDialog(null, "DB : Enregistrement créé !");
         } catch (Exception e) {
