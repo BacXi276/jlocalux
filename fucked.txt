@@ -13,7 +13,30 @@ Si on créer une LSC il faut avant créer un Loc avec same idea value are w/e
 -> REGLE
 
 new pb index out of range 11>10 
-solution:
-changer la méthode d'insert ou en faire 2 diff PROB EN FAIRE 2 diff 
-1 insert on loc just numloc
-puis 1 insert on LSC avec all data
+solution: TRIGGER ON INSERT ON LSC
+Cannot add or update a child row: a foreign key constraint fails (`localux_db`.`LocationSansChauffeur`, CONSTRAINT `LocationSansChauffeur_ibfk_2` FOREIGN KEY (`idAssuranceComp`) REFERENCES `AssuranceCompl�mentaire` (`idAssuranceComp`))
+tjr pb de contrainte fk pourtant marche si ajout direct sur la bdd
+
+
+IMPORTANT SUPPRIMER DATE DEPART/RETOUR REEL juste date depart et date retour on assume que le client par a temps
+A MOINS QUE UTILE POUR CALCUL MONTANT A REGLEE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
