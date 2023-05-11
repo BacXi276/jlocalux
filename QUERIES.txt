@@ -52,5 +52,6 @@ VALUES ('RS','Rayure superficielle');
 MANDATORY pour les resultats de requettes: getString/getInt....
 https://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getObject%28java.lang.String%29
 
-controle avant après I pas X
-ajouter clé étrangère sur LSC de num Loc (seulement clé primaire pr lem moment)
+controle avant après I avec fleche vers retrait pas X !!!!!! MEME id sur rapprot avant et après
+ajouter clé étrangère sur LSC de num Loc (seulement clé primaire pr le moment)
+
