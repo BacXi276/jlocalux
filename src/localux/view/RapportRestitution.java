@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package localux.view;
-
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 /**
  *
  * @author l.sanhes
@@ -60,6 +61,11 @@ public class RapportRestitution extends javax.swing.JFrame {
         jLabel1.setText("Saisir  N°Location:");
 
         afficherRapport.setText("Afficher");
+        afficherRapport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                afficherRapportActionPerformed(evt);
+            }
+        });
 
         jTextField1.setText("Controle n°320-1 réalisé par Etudiant ");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -197,12 +203,10 @@ public class RapportRestitution extends javax.swing.JFrame {
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(120, 120, 120))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(52, 52, 52)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(172, 172, 172)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
                             .addComponent(jLabel6))
@@ -216,8 +220,8 @@ public class RapportRestitution extends javax.swing.JFrame {
                         .addGap(30, 30, 30)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(uiGravite, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
+                        .addComponent(uiGravite, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(Ajouter)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -295,6 +299,19 @@ public class RapportRestitution extends javax.swing.JFrame {
     private void uiNomPieceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uiNomPieceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_uiNomPieceActionPerformed
+
+    private void afficherRapportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afficherRapportActionPerformed
+        // TODO add your handling code here:
+        afficherRapport.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+        String location = uiLocation.getText();
+        if (!location.isEmpty()) {
+            // récupérer les informations nécessaires
+            // les afficher dans jScrollPane2
+        }
+    }
+});
+    }//GEN-LAST:event_afficherRapportActionPerformed
 
     /**
      * @param args the command line arguments

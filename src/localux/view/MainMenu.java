@@ -254,7 +254,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_VehicleMouseClicked
 
     private void imprimeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imprimeMouseClicked
-        Rapport rapport = new Rapport();
+        RapportRestitution rapport = new RapportRestitution();
         rapport.setVisible(true);
     }//GEN-LAST:event_imprimeMouseClicked
 
