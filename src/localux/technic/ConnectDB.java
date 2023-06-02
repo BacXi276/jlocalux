@@ -26,7 +26,7 @@ public class ConnectDB {
         c.setSgbdSys("mysql");
         c.setSgbdHost("mysql-localux.alwaysdata.net");
         c.setSgbdPort("3306");
-        c.setSgbdDb("localux_db?useSSL=FALSE");
+        c.setSgbdDb("localux_lucas?useSSL=FALSE");
         c.setSgbdUser("localux");
         c.setSgbdPass("BTSsio82300");
 
